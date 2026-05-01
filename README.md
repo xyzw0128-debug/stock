@@ -1,172 +1,25 @@
-# stock
-Stock investment assistant for individuals and families
+# Discord Korean Stock Portfolio Assistant
 
-# 📈 Discord 기반 한국 주식 포트폴리오 비서
+Minimal production-ready Python project scaffold for a Discord-based Korean stock portfolio assistant.
 
-개인 투자자를 위한 **Discord 연동형 포트폴리오 관리 & 투자 습관 개선 비서**입니다.  
-증권사 앱 캡처 이미지를 업로드하면 보유 종목을 인식하고,  
-포트폴리오 변화 추적 / 자동 매매일지 / 리스크 경고 / 종목 리서치를 제공합니다.
+## Tech Stack
+- Python 3.12
+- PostgreSQL (Supabase)
+- SQLAlchemy 2.x
+- Alembic
+- discord.py
+- python-dotenv
 
----
+## Structure
+- `app/` - bot and service modules
+- `db/` - SQLAlchemy base, session, models, and migrations
+- `tests/` - test suite
 
-## 🚀 프로젝트 목표
-
-기존 HTS/MTS는 **매매 기능 중심**입니다.  
-이 프로젝트는 그 반대로,
-
-- 내가 오늘 무엇을 했는지
-- 포트폴리오가 어떻게 변했는지
-- 감정적으로 사고팔았는지
-- 특정 종목 리스크가 커졌는지
-
-를 자동으로 알려주는 **투자자용 AI 비서**를 목표로 합니다.
-
----
-
-## 🧩 핵심 기능
-
-### 1. 📷 포트폴리오 캡처 인식
-
-사용자가 미래에셋 / 키움 / 토스증권 등 앱 화면을 캡처 후 Discord 업로드
-
-→ OCR + AI 파싱으로 아래 정보 추출
-
-- 종목명
-- 수량
-- 평균단가
-- 평가손익
-- 수익률
-- 총 자산 비중
-
----
-
-### 2. 📊 포트폴리오 변화 추적
-
-이전 업로드 데이터와 비교하여 자동 분석
-
-예시:
-
-- 삼성전자 +20주 추가 매수
-- NAVER 전량 매도
-- 2차전지 비중 18% → 32%
-- 현금 비중 감소
-
----
-
-### 3. 📝 자동 매매일지 생성
-
-업로드 기록을 바탕으로 오늘 행동 요약
-
-예시:
-
-> 오늘 삼성전자 비중 확대  
-> 손실 종목 추가매수 발생  
-> 고위험 집중도 증가
-
----
-
-### 4. ⚠️ 리스크 경고 시스템
-
-룰 기반 투자 경고
-
-- 한 종목 비중 40% 초과
-- 손실 종목 반복 물타기
-- 단기 과매매 추정
-- 특정 섹터 과집중
-- 최근 7일 변동성 과다
-
----
-
-### 5. 🔎 종목 리서치 비서
-
-보유 종목 중심 맞춤형 정보 제공
-
-- 공시 일정
-- 실적 발표일
-- 뉴스 요약
-- 기관/외국인 수급 변화
-- 섹터 이슈
-
----
-
-## 💬 왜 Discord인가?
-
-Discord는 이미 완성형 인터페이스입니다.
-
-- 모바일 / PC 동시 사용
-- 이미지 업로드 쉬움
-- 알림 강력함
-- 채널 분리 가능
-- 개인 전용 공간 구성 가능
-
-즉, 앱을 새로 만들 필요 없이  
-**바로 서비스 운영 가능**
-
----
-
-## 🛠 기술 스택
-
-### Backend
-- Python
-- FastAPI
-
-### AI
-- ChatGPT
-- Claude
-- OCR Engine (Tesseract / PaddleOCR / GPT Vision)
-
-### Database
-- PostgreSQL / SQLite
-
-### Platform
-- Discord Bot API
-
----
-
-## 📌 MVP (1차 목표)
-
-### 핵심만 먼저 구현
-
-- Discord 로그인
-- 캡처 업로드
-- 종목 인식
-- 포트폴리오 저장
-- 전일 대비 변화 분석
-- 기본 리스크 경고
-
----
-
-## 📈 향후 확장
-
-- 매매 습관 점수화
-- 월간 리포트
-- 투자 성향 분석
-- 친구와 기록 공유
-- 유료 프리미엄 분석
-- 웹 대시보드
-
----
-
-## 🎯 타겟 사용자
-
-- 한국 개인 투자자
-- 매매 복기를 못하는 사람
-- 감정매매 줄이고 싶은 사람
-- 포트폴리오 관리가 어려운 사람
-- 주식 앱보다 더 똑똑한 비서를 원하는 사람
-
----
-
-## 🔥 한 줄 소개
-
-> “주식 매매는 증권사 앱에서,  
-> 투자 관리는 Discord AI 비서에게.”
-
----
-
-## 📅 개발 상태
-
-현재 기획 / 설계 단계 진행 중  
-MVP 우선 개발 예정
-
----
+## Setup
+1. Create and activate a virtual environment.
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Create `.env` from `.env.example` and set values.
+4. Run migrations with Alembic.
